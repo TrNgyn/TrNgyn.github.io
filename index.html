@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+h<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,9 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
+        hh {
+            --primary:  #f97316;
+            --primary-dark:  #ea580c;
             --text: #1f2937;
             --text-light: #6b7280;
             --border: #e5e7eb;
@@ -416,7 +416,237 @@
 <body>
     <header>
         <nav>
-            <a href="#" class="logo"> Portfolio </a>
+            
+            
+            /* ============ HERO SECTION ANIMATIONS ============ */
+            @keyframes fadeSlideDown {
+              from {
+                opacity: 0;
+                transform: translateY(-20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+            
+            .hero h1 {
+              animation: fadeSlideDown 0.8s ease-out;
+            }
+            
+            .hero .subtitle {
+              animation: fadeSlideDown 0.8s ease-out 0.2s both;
+            }
+            
+            .hero p {
+              animation: fadeIn 0.8s ease-out 0.4s both;
+            }
+            
+            .hero .links {
+              animation: fadeIn 0.8s ease-out 0.6s both;
+            }
+            
+            /* ============ PROJECT CARD ANIMATIONS ============ */
+            @keyframes liftCard {
+              to {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px rgba(249, 115, 22, 0.15);
+              }
+            }
+            
+            @keyframes borderAccent {
+              from {
+                width: 0;
+                opacity: 0;
+              }
+              to {
+                width: 100%;
+                opacity: 1;
+              }
+            }
+            
+            .project-card {
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              position: relative;
+              overflow: hidden;
+            }
+            
+            .project-card::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 3px;
+              width: 0;
+              background: linear-gradient(90deg, var(--primary), transparent);
+              transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .project-card:hover {
+              animation: liftCard 0.4s ease-out forwards;
+            }
+            
+            .project-card:hover::before {
+              width: 100%;
+            }
+            
+            /* ============ STAGGERED ENTRANCE (ON SCROLL) ============ */
+            @keyframes slideInLeft {
+              from {
+                opacity: 0;
+                transform: translateX(-30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes slideInRight {
+              from {
+                opacity: 0;
+                transform: translateX(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            .project-card:nth-child(1) {
+              animation: slideInLeft 0.6s ease-out;
+            }
+            
+            .project-card:nth-child(2) {
+              animation: slideInRight 0.6s ease-out;
+            }
+            
+            .project-card:nth-child(3) {
+              animation: slideInLeft 0.6s ease-out;
+            }
+            
+            /* ============ SKILLS/TECH TAG ANIMATIONS ============ */
+            @keyframes pulseGlow {
+              0%, 100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+              }
+              50% {
+                box-shadow: 0 0 0 8px rgba(249, 115, 22, 0);
+              }
+            }
+            
+            .tech-tag {
+              transition: all 0.3s ease;
+              animation: pulseGlow 3s infinite;
+            }
+            
+            .tech-tag:hover {
+              background-color: var(--primary);
+              color: white;
+              transform: scale(1.05);
+              animation: none;
+            }
+            
+            .tech-tag {
+              opacity: 0;
+              animation: fadeIn 0.5s ease-out forwards;
+            }
+            
+            .tech-tag:nth-child(1) { animation-delay: 0s; }
+            .tech-tag:nth-child(2) { animation-delay: 0.1s; }
+            .tech-tag:nth-child(3) { animation-delay: 0.2s; }
+            .tech-tag:nth-child(4) { animation-delay: 0.3s; }
+            .tech-tag:nth-child(5) { animation-delay: 0.4s; }
+            .tech-tag:nth-child(n+6) { animation-delay: 0.5s; }
+            
+            /* ============ SECTION HEADING ANIMATIONS ============ */
+            @keyframes drawUnderline {
+              from {
+                width: 0;
+              }
+              to {
+                width: 100%;
+              }
+            }
+            
+            .section-heading {
+              position: relative;
+              display: inline-block;
+              animation: fadeSlideDown 0.6s ease-out;
+            }
+            
+            .section-heading::after {
+              content: '';
+              position: absolute;
+              bottom: -8px;
+              left: 0;
+              height: 3px;
+              width: 100%;
+              background: var(--primary);
+              animation: drawUnderline 0.8s ease-out 0.3s backwards;
+            }
+            
+            /* ============ SOCIAL LINK ANIMATIONS ============ */
+            .social-links a {
+              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              display: inline-block;
+            }
+            
+            .social-links a:hover {
+              color: var(--primary);
+              transform: translateY(-4px) scale(1.15);
+            }
+            
+            @keyframes bounceIn {
+              from {
+                opacity: 0;
+                transform: scale(0.3);
+              }
+              to {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+            
+            .social-links a {
+              animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            }
+            
+            .social-links a:nth-child(1) { animation-delay: 0.7s; }
+            .social-links a:nth-child(2) { animation-delay: 0.8s; }
+            .social-links a:nth-child(3) { animation-delay: 0.9s; }
+            
+            /* ============ BUTTON HOVER ANIMATIONS ============ */
+            .btn, a.btn {
+              position: relative;
+              overflow: hidden;
+              transition: color 0.3s ease;
+            }
+            
+            .btn::before, a.btn::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 100%;
+              background: var(--primary);
+              z-index: -1;
+              transition: left 0.3s ease;
+            }
+            
+            .btn:hover::before, a.btn:hover::before {
+              left: 0;
+            }<a href="#" class="logo"> Portfolio </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>

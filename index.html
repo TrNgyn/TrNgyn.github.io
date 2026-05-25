@@ -218,9 +218,10 @@ hh##f97316            }
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.75rem;
-              min-height: 3.5rem;
+            min-height: 5.5rem;
             flex-wrap: wrap;
-              align-items: center;
+            align-items: center;
+            align-content: flex-start;
         }
 
         .project-badge {
@@ -471,11 +472,10 @@ hh##f97316            }
                 </div>
                 <h3>FMCG Inventory Reporting</h3>
                 <div class="project-body">
-                <p>Inventory analytics tool built on ~1M FMCG transactions to classify SKUs by revenue contribution and demand consistency, supporting buying decisions across a retail portfolio.</p>
+                <p>Streamlit inventory dashboard built on 1,000,000+ FMCG transactions to classify SKUs by revenue contribution and demand consistency</p>
                 <ul class="project-highlights">
-                    <li>Implemented ABC-XYZ clustering segmenting 4,000+ SKUs based on revenue value and demand variability; top 20% of products drive 80% of revenue</li>
-                    <li>Calculated tiered safety stock using service-level targets (95%/90%/85% for A/B/C tiers) and lead-time adjusted demand to balance stockout risk against holding costs</li>
-                    <li>Built interactive Streamlit dashboard surfacing stockout risk alerts, overstock flags, and a daily reorder queue ranked by revenue impact</li>
+                    <li>Implemented ABC-XYZ clustering to segment 4,000+ SKUs by revenue value and demand variability, identifying the top 20% of products drive 80% of revenue</li>
+                    <li>Calculated tiered safety stock using service-level targets and lead-time adjusted demand, surfacing stockout risk alerts, overstock flags, and a daily reorder queue ranked by revenue impact</li>
                 </ul>
                 </div>
                 <div class="tech-stack">
@@ -500,11 +500,10 @@ hh##f97316            }
                 </div>
                 <h3>Olist E-commerce Analytics</h3>
                 <div class="project-body">
-                <p>Production Lakehouse pipeline processing 100K+ orders ($16M GMV) across revenue, logistics, and seller performance for a Brazilian e-commerce marketplace serving 3000 sellers, 26 states.</p>
+                <p>End-to-end Lakehouse pipeline processing 100,000+ orders ($16M GMV) for an e-commerce marketplace serving 3,000 sellers across 26 states</p>
                 <ul class="project-highlights">
-                    <li>Built end-to-end Medallion pipeline; exposed insights to non-technical stakeholders via Power BI dashboards and Google Gemini AI agents</li>
                     <li>Quantified $1.1M in annual recoverable revenue by identifying tier-specific delivery breaking points, translating logistics delay data into targeted commercial interventions</li>
-                    <li>Analysed seller acquisition funnel and marketing channel efficiency; identified highest converting channel, recommended budget reallocation projecting 10% increase in conversions</li>
+                    <li>Analysed seller acquisition funnel and marketing channel efficiency, identifying the highest-converting channel and recommending budget reallocation projecting a 10% increase in conversions</li>
                 </ul>
                 </div>
                 <div class="tech-stack">
@@ -529,6 +528,8 @@ hh##f97316            }
             <div class="project-card">
                 <div class="project-badges">
                     <span class="project-badge">Machine Learning</span>
+                    <span class="project-badge">Statistical Modelling</span>
+
                 </div>
                 <h3>Ames Housing Price Prediction</h3>
                 <div class="project-body">
